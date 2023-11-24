@@ -39,3 +39,12 @@ word count (inbuilt) :
   hdfs dfs -put input.txt /wordcount/input
   
   hadoop jar hadoop*/share/hadoop/mapreduce/hadoop-mapreduce-examples*.jar wordcount /wordcount/input /output
+
+
+hdfs dfs -mkdir -p /user/hadoop/input
+hdfs dfs -put LICENSE.txt /user/hadoop/input/
+cd $HADOOP_HOME
+hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount input output
+hdfs dfs -ls /user/hadoop/output
+hdfs dfs -cat /user/hadoop/output/part-r-00000
+
