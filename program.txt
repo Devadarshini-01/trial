@@ -1,0 +1,262 @@
+application: ae-01-trivial
+version: 1
+runtime: python
+api_version: 1
+handlers:
+- url: /.*
+  script:index.py
+
+
+
+application: ae-01-trivial
+version: 1
+runtime: python
+api_version: 1
+handlers:
+- url: /.*
+  static_files: abc.html
+  upload: abc.html
+
+
+
+print ('Content-Type: text/plain')
+print (' ')
+print ('Hello there Chuck')
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
+
+
+//calculator python
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Cannot divide by zero"
+
+print("Select operation:")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+choice = input("Enter choice (1/2/3/4): ")
+
+if choice in ('1', '2', '3', '4'):
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if choice == '1':
+        print(num1, "+", num2, "=", add(num1, num2))
+    elif choice == '2':
+        print(num1, "-", num2, "=", subtract(num1, num2))
+    elif choice == '3':
+        print(num1, "*", num2, "=", multiply(num1, num2))
+    elif choice == '4':
+        print(num1, "/", num2, "=", divide(num1, num2))
+else:
+    print("Invalid input")
+
+//pattern
+#include <stdio.h>
+int main()
+{
+    int N, i, j;
+    printf("Enter N: ");
+    scanf("%d", &N); 
+    for(i=N; i>=1; i--)
+    {
+        for(j=N; j>i; j--)
+        {
+            printf("%d", j);
+        }
+    for(j=1; j<=(i*2-1); j++)
+        {
+            printf("%d", i);
+        }
+   for(j=i+1; j<=N; j++)
+        {
+            printf("%d", j);
+        }
+      printf("\n");
+    }
+for(i=1; i<N; i++)
+    {
+        for(j=N; j>i; j--)
+        {
+            printf("%d", j);
+        }
+
+        for(j=1; j<=(i*2-1); j++)
+        {
+            printf("%d", i+1);
+        }
+
+        for(j=i+1; j<=N; j++)
+        {
+            printf("%d", j);
+        }
+       printf("\n");
+    }
+  return 0;
+}
+
+//html cal
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator with Inputs</title>
+  <style>
+    .calculator {
+      width: 250px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .calculator input[type="number"] {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    .calculator input[type="button"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      background-color: #f0f0f0;
+    }
+    .calculator input[type="button"]:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <label for="input1">Number 1:</label>
+    <input type="number" id="input1"><br>
+
+    <label for="input2">Number 2:</label>
+    <input type="number" id="input2"><br>
+
+    <input type="button" value="Add" onclick="calculate('add')">
+    <input type="button" value="Subtract" onclick="calculate('subtract')">
+    <input type="button" value="Multiply" onclick="calculate('multiply')">
+    <input type="button" value="Divide" onclick="calculate('divide')"><br>
+
+    <label for="result">Result:</label>
+    <input type="text" id="result" disabled>
+  </div>
+
+  <script>
+    function calculate(operation) {
+      let num1 = parseFloat(document.getElementById('input1').value);
+      let num2 = parseFloat(document.getElementById('input2').value);
+      let result;
+
+      switch (operation) {
+        case 'add':
+          result = num1 + num2;
+          break;
+        case 'subtract':
+          result = num1 - num2;
+          break;
+        case 'multiply':
+          result = num1 * num2;
+          break;
+        case 'divide':
+          result = num1 / num2;
+          break;
+        default:
+          result = "Invalid operation";
+      }
+
+      document.getElementById('result').value = result;
+    }
+  </script>
+</body>
+</html>
+
+//html stock
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Input</title>
+</head>
+<body>
+  <h2>Enter Stock Information</h2>
+  <form id="stockForm">
+    <label for="stockSymbol">Stock Symbol:</label>
+    <input type="text" id="stockSymbol" name="stockSymbol" required><br><br>
+
+    <label for="stockPrice">Stock Price:</label>
+    <input type="number" id="stockPrice" name="stockPrice" required><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Stock Information:</h2>
+  <p id="displayStockInfo"></p>
+
+  <script>
+    // Accessing the form and input elements
+    const stockForm = document.getElementById('stockForm');
+    const displayStockInfo = document.getElementById('displayStockInfo');
+
+    // Function to handle form submission
+    stockForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Get values from the form
+      const stockSymbol = document.getElementById('stockSymbol').value;
+      const stockPrice = document.getElementById('stockPrice').value;
+
+      // Display stock information
+      displayStockInfo.innerHTML = `
+        Stock Symbol: ${stockSymbol}<br>
+        Stock Price: $${stockPrice}
+      `;
+    });
+  </script>
+</body>
+</html>
+
+
+//stockpython
+# Function to get stock information from the user
+def get_stock_info():
+    stock_symbol = input("Enter Stock Symbol: ")
+    stock_price = float(input("Enter Stock Price: $"))
+    return stock_symbol, stock_price
+
+# Get stock information from the user
+symbol, price = get_stock_info()
+
+# Display stock information
+print("\nStock Information:")
+print(f"Stock Symbol: {symbol}")
+print(f"Stock Price: ${price}")
